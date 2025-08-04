@@ -1,0 +1,9 @@
+[submodule "modules/automation-web"]
+	path = modules/automation-web
+	url = https://github.com/ptdeanzz/automation-web
+[submodule "modules/automation-mobile"]
+	path = modules/automation-mobile
+	url = https://github.com/ptdeanzz/automation-mobile
+[submodule "modules/automation-api"]
+	path = modules/automation-api
+	url = https://github.com/ptdeanzz/automation-api

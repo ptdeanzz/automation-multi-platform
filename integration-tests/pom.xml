@@ -1,0 +1,5 @@
+<parent>
+    <groupId>com.ptdeanzz</groupId>
+    <artifactId>automation-root</artifactId> <!-- tên root repo nếu mày đổi -->
+    <version>1.0-SNAPSHOT</version>
+</parent>
