@@ -1,5 +1,63 @@
-<parent>
-    <groupId>com.ptdeanzz</groupId>
-    <artifactId>automation-root</artifactId> <!-- tên root repo nếu mày đổi -->
-    <version>1.0-SNAPSHOT</version>
-</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ptdeanzz</groupId>
+        <artifactId>automation-multi-platform</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>integration-tests</artifactId>
+    <groupId>com.ptdeanzz.tests</groupId>
+    <packaging>jar</packaging>
+
+    <name>integration-tests</name>
+    <description>Cross-platform test orchestration layer (Web + API + Mobile)</description>
+
+    <dependencies>
+        <!-- Submodule dependencies -->
+        <dependency>
+            <groupId>com.ptdeanzz.web</groupId>
+            <artifactId>automation-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ptdeanzz.api</groupId>
+            <artifactId>automation-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ptdeanzz.mobile</groupId>
+            <artifactId>automation-mobile</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Test framework -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Run TestNG tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
